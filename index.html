@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holder Concrete - Líder en Prefabricados de Concreto</title>
+    <meta name="description" content="Especialistas en prefabricados de concreto: alcantarillas, barreras jersey, registros sanitarios y eléctricos. Ofrecemos excelencia en todo lo que hacemos.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-orange: #f16022;
+            --dark-orange: #d14a0f;
+            --light-orange: #ff7a47;
+            --primary-gray: #5b5a5a;
+            --dark-gray: #3a3939;
+            --light-gray: #8a8989;
+            --white: #ffffff;
+            --black: #000000;
+            --light-bg: #f5f5f5;
+            --shadow: rgba(0, 0, 0, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--primary-gray);
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 15px var(--shadow);
+            overflow: visible;
+        }
+
+        .logo-img {
+            height: 180px;
+            width: auto;
+            max-width: 500px;
+            object-fit: contain;
+            margin-top: -60px;
+            margin-bottom: -60px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-orange);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            font-size: 2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--primary-gray);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-orange);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-orange);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), 
+                        url('assets/images/extra/fotoHeroHolderagainwebp.webp') center/cover;
+            color: var(--white);
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out 0.2s both;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-orange);
+            color: var(--white);
+            padding: 1.2rem 3rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(241, 96, 34, 0.4);
+            animation: fadeInUp 1s ease-out 0.4s both;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--primary-orange);
+        }
+
+        .cta-button:hover {
+            background: var(--dark-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(241, 96, 34, 0.6);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Base Styles */
+        .section {
+            padding: 100px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--light-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-subtitle2 {
+            font-size: 1.2rem;
+            color: var(--light-gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        /* About Section */
+        .about {
+            background: var(--light-bg);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--primary-gray);
+            font-size: 1.1rem;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--primary-gray);
+        }
+
+        .feature-item i {
+            color: var(--primary-orange);
+            font-size: 1.2rem;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: #000000 0 10px 25px var(--shadow);
+            box-shadow: 0 15px 35px var(--shadow);
+        }
+
+        .about-image img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 45px var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        /* Services Section */
+        .mi-boton {
+  background-color: #f5f5f5; /* verde turquesa */
+  margin-top: 4%;
+  border-color: #d14a0f;
+  color: var(--dark-gray);; /* texto blanco */
+  padding: 0.75rem 1.5rem; /* espacio interno */
+  border: var(--dark-orange); /* sin borde */
+  border-radius: 8px; /* bordes redondeados */
+  font-size: 1rem; /* tamaño de letra */
+  font-weight: bold; /* texto en negrita */
+  cursor: pointer; /* cursor de mano */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* animaciones */
+}
+
+.mi-boton:hover {
+  background-color: #ff7a47; /* color al pasar el mouse */
+  transform: scale(1.05); /* efecto pequeño de zoom */
+}
+
+
+
+        .services {
+            background: var(--white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 8px 25px var(--shadow);
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-orange);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px var(--shadow);
+            border-color: var(--primary-orange);
+        }
+
+        .service-card:hover::before {
+            transform: translateX(0);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--primary-orange);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+            text-transform: uppercase;
+        }
+
+        .service-card p {
+            color: var(--primary-gray);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--primary-orange);
+            text-transform: uppercase;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin-bottom: 0.75rem;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-orange);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item i {
+            color: var(--primary-orange);
+            width: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            width: 45px;
+            height: 45px;
+            background: var(--primary-orange);
+            color: var(--white);
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-icons a:hover {
+            background: var(--light-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(241, 96, 34, 0.4);
+        }
+
+        .map-container {
+            height: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #475569;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Utilities */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 90px);
+                background: var(--white);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 3rem;
+                transition: left 0.3s ease;
+                box-shadow: 0 5px 20px var(--shadow);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 1rem 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-image {
+                order: -1;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero {
+                padding: 120px 0 80px;
+                min-height: 90vh;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .nav-menu a {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Animation Classes */
+        .slide-in-left {
+            transform: translateX(-50px);
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-left.visible {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .slide-in-right {
+            transform: translateX(50px);
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-right.visible {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        /* Para animación tipo acordeón */
+.galeria {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease, opacity 0.6s ease;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* responsive */
+  gap: 16px; /* espacio entre imágenes */
+  margin-top: 20px;
+  padding: 10px;
+  background: rgba(240, 240, 240, 0.95); /* fondo gris suave */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.galeria.open {
+  max-height: 1000px; /* suficiente para varias filas */
+  opacity: 1;
+}
+
+/* Estilo de imágenes */
+.galeria img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.imagen-principal img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagen-principal img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+
+.galeria img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Estilos para lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Imagen ampliada */
+  .lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #000;
+  }
+
+
+
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">
+                <img src="assets/images/extra/logosinfondo.png" alt="Holder Concrete" class="logo-img">
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú móvil">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Soluciones Integrales en Concreto </h1>
+            <p>Más de 30 años ofreciendo prefabricados de concreto de alta calidad, 
+                Pavimentos industriales resistentes y consultoría para proyectos personalizados, 
+                garantizando diseño eficiente y durabilidad en cada obra.</p>
+            <a href="#servicios" class="cta-button">
+                <i class="fas fa-hammer" aria-hidden="true"></i>
+                Ofreciendo Excelencia en Todo lo que Hacemos
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros" class="section about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Quiénes Somos</h2>
+                <p class="section-subtitle">Líderes en la fabricación de elementos prefabricados de concreto</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text slide-in-left">
+                    <h3>Experiencia y Compromiso</h3>
+                    <p>Holder Concrete es una empresa líder en la fabricación de elementos prefabricados de concreto, con más de 30 años de experiencia en el mercado. Nos especializamos en la producción de productos estándar de alta calidad y servicios personalizados para satisfacer las necesidades específicas de cada proyecto.</p>
+                    <p>Nuestro compromiso con la excelencia se refleja en cada producto que fabricamos, utilizando materiales de primera calidad y tecnología de vanguardia para garantizar la durabilidad y resistencia que su proyecto necesita.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            <span>Calidad Garantizada</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-clock" aria-hidden="true"></i>
+                            <span>Entrega Puntual</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-tools" aria-hidden="true"></i>
+                            <span>Servicios Personalizados</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                            <span>Productos Duraderos</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image slide-in-right">
+                    <img src="assets/images/extra/aboutusectionwebp.webp" loading="lazy" alt="Planta de producción de prefabricados de concreto Holder Concrete">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="section services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Nuestros Productos y Servicios</h2>
+                <p class="section-subtitle">Soluciones integrales en prefabricados de concreto para todo tipo de proyectos</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <i class="fas fa-water service-icon" aria-hidden="true"></i>
+                    <h3>Alcantarillas de Concreto</h3>
+                    <p>Tuberías y sistemas de drenaje prefabricados de alta resistencia para infraestructura urbana y proyectos de construcción. Disponibles en múltiples diámetros y especificaciones técnicas.</p>
+              
+                    <!-- Imagen siempre visible preview-->
+                <div class="imagen-principal">
+                <img src="assets/images/seccion1/fotodentrodetubo.jpg" loading="lazy" alt="Imagen Principal">
+                </div>
+                    
+                    <!-- boton para imagenes seccion tuberia-->
+            <button id="btnGaleria" type="button" class="mi-boton" onclick="toggleGaleria('galeriaFotos1')">Ver más!</button>
+            <div id="galeriaFotos1" class="galeria">
+            <img src="assets/images/seccion1/tubo1.jpg" loading="lazy" alt="Imagen 1">
+            <img src="assets/images/seccion1/tubo2.jpg" loading="lazy" alt="Imagen 2">
+            <img src="assets/images/seccion1/tubos3.jpg" loading="lazy" alt="Imagen 3">            
+            <img src="assets/images/seccion1/tuos4.jpg" loading="lazy" alt="Imagen 4">
+
+            </div>
+                </div>
+
+
+<!-- lightbox para preview de fotografias-->
+<div id="lightbox" class="lightbox" onclick="cerrarLightbox()">
+<img id="imagenGrande" src="" alt="imagen ampliada">
+</div>
+             
+                <!--seccion 2, barreras jersey-->
+                <div class="service-card fade-in">
+                    <i class="fas fa-road service-icon" aria-hidden="true"></i>
+                    <h3>Barreras Jersey</h3>
+                    <p>Elementos de seguridad vial prefabricados ideales para separación de carriles, protección de obras y control de tráfico. Diseñadas según normativas internacionales de seguridad.</p>
+                        
+                    <!-- Imagen siempre visible preview-->
+                <div class="imagen-principal">
+                <img src="assets/images/seccion2/jersey5.jpg" loading="lazy" alt="Imagen Principal">
+                </div>
+                    
+                    <!-- boton para imagenes seccion 2 jersey-->
+            <button id="btnGaleria" type="button" class="mi-boton" onclick="toggleGaleria('galeriaFotos2')">Ver más!</button>
+            <div id="galeriaFotos2" class="galeria">
+            <img src="assets/images/seccion2/jersey1.jpg" loading="lazy" alt="Imagen 1">
+            <img src="assets/images/seccion2/jersey2.jpg" loading="lazy" alt="Imagen 2">
+            <img src="assets/images/seccion2/jersey3.jpg" loading="lazy" alt="Imagen 3">
+            <img src="assets/images/seccion2/jersey4.jpg" loading="lazy" alt="Imagen 4">
+
+            </div>
+                </div>
+                
+                <!--seccion 3,registros sanitarios-->
+                <div class="service-card fade-in">
+                    <i class="fas fa-circle service-icon" aria-hidden="true"></i>
+                    <h3>Registros Sanitarios</h3>
+                    <p>Sistemas de registros prefabricados para redes sanitarias, diseñados para facilitar el mantenimiento y garantizar la durabilidad del sistema de alcantarillado.</p>
+                              
+                    <!-- Imagen siempre visible preview-->
+                <div class="imagen-principal">
+                <img src="assets/images/seccion3/sanitario4.jpg" loading="lazy" alt="Imagen Principal">
+                </div>    
+                                          <!-- boton para imagenes-->
+            <button id="btnGaleria" type="button" class="mi-boton" onclick="toggleGaleria('galeriaFotos3')">Ver más!</button>
+            <div id="galeriaFotos3" class="galeria">
+            <img src="assets/images/seccion3/sanitario6.jpg" loading="lazy" alt="Imagen 1">
+            <img src="assets/images/seccion3/sanitario1.jpg" loading="lazy" alt="Imagen 1">
+            <img src="assets/images/seccion3/sanitario5.jpg" loading="lazy" alt="Imagen 1">
+            <img src="assets/images/seccion3/sanitario2.jpg" loading="lazy" alt="Imagen 2">
+            <img src="assets/images/seccion3/sanitario3.jpg" loading="lazy" alt="Imagen 4">
+
+            </div>
+                </div>
+                <!--seccion 4, registros electricos-->
+                <div class="service-card fade-in">
+                    <i class="fas fa-bolt service-icon" aria-hidden="true"></i>
+                    <h3>Registros Eléctricos</h3>
+                    <p>Registros especializados para instalaciones eléctricas subterráneas, fabricados con especificaciones técnicas precisas para proteger el cableado y facilitar el acceso.</p>
+                                
+                    <!-- Imagen siempre visible preview-->
+                <div class="imagen-principal">
+                <img src="assets/images/seccion4/electrico5.jpg" loading="lazy" alt="Imagen Principal">
+                </div>       
+                    
+                    <!-- boton para imagenes-->
+            <button id="btnGaleria" type="button" class="mi-boton" onclick="toggleGaleria('galeriaFotos4')">Ver más!</button>
+            <div id="galeriaFotos4" class="galeria">
+            <img src="assets/images/seccion4/electrico1.jpg" loading="lazy" alt="Imagen 1">
+            <img src="assets/images/seccion4/electrico2.jpg" loading="lazy" alt="Imagen 2">
+            <img src="assets/images/seccion4/electrico3.png" loading="lazy" alt="Imagen 3">
+            <img src="assets/images/seccion4/electrico4.jpg" loading="lazy" alt="Imagen 4">
+            </div>
+                </div>
+                
+
+                <!--seccion 5, servicios personalizados-->
+                <div class="service-card fade-in">
+                    <i class="fas fa-cogs service-icon" aria-hidden="true"></i>
+                    <h3>Servicios Personalizados</h3>
+                    <p>Diseño y fabricación de elementos prefabricados según especificaciones del cliente. Asesoría técnica especializada para proyectos únicos y de gran envergadura.</p>
+                                    
+                     <!-- Imagen siempre visible preview-->
+                <div class="imagen-principal">
+                <img src="assets/images/seccion5/perso1.jpg" loading="lazy" alt="Imagen Principal">
+                </div>   
+                    
+                    <!-- boton para imagenes-->
+            <button id="btnGaleria" type="button" class="mi-boton" onclick="toggleGaleria('galeriaFotos5')">Ver más!</button>
+            <div id="galeriaFotos5" class="galeria">
+            <img src="assets/images/seccion5/perso2.jpg" loading="lazy" alt="Imagen 2">
+            <img src="assets/images/seccion5/perso4.jpg" loading="lazy" alt="Imagen 3">
+            </div>
+                </div>
+                
+
+                <!--seccion6, entrega e instalacion-->
+                <div class="service-card fade-in">
+                    <i class="fas fa-truck service-icon" aria-hidden="true"></i>
+                    <h3>Entrega e instalación</h3>
+                    <p>Servicio completo de transporte. Contamos con equipos especializados y personal técnico calificado para garantizar una entrega perfecta.</p>
+                                 
+                      <!-- Imagen siempre visible preview-->
+                <div class="imagen-principal">
+                <img src="assets/images/seccion6/entrega5.jpg" loading="lazy" alt="Imagen Principal">
+                </div>   
+                    
+                    <!-- boton para imagenes entre e instalacion-->
+            <button id="btnGaleria" type="button" class="mi-boton" onclick="toggleGaleria('galeriaFotos6')">Ver más!</button>
+            <div id="galeriaFotos6" class="galeria">
+            <img src="assets/images/seccion6/entrega1.jpg" loading="lazy" alt="Imagen 1">
+            <img src="assets/images/seccion6/entrega2.jpg" loading="lazy" alt="Imagen 2">
+            <img src="assets/images/seccion6/entrega3.jpg" loading="lazy" alt="Imagen 3">
+            <img src="assets/images/seccion6/entrega4.jpg" loading="lazy" alt="Imagen 4">
+
+            </div>
+                </div>
+
+                <!--seccion7, talots-->
+                    <div class="service-card fade-in">
+                    <i class="fas fa-cube service-icon" aria-hidden="true"></i>
+                    <h3>Alcantarillas Cuadradas - Talots</h3>
+                    <p>Estructuras prefabricadas en concreto de alta resistencia, ideales para cruces de vías, drenajes pluviales y canalización de aguas en proyectos urbanos y rurales. 
+                        Ofrecen fácil instalación, gran capacidad hidráulica y durabilidad en condiciones exigentes.</p>
+
+                         <!-- Imagen siempre visible preview-->
+                <div class="imagen-principal">
+                <img src="assets/images/seccion8-talots//talot1.webp" loading="lazy" alt="Imagen Principal">
+                </div>   
+
+                                        <!-- boton para imagenes seccion 7 talots-->
+            <button id="btnGaleria" type="button" class="mi-boton" onclick="toggleGaleria('galeriaFotos7')">Ver más!</button>
+            <div id="galeriaFotos7" class="galeria">
+            <img src="assets/images/seccion8-talots/talot2.jpg" loading="lazy" alt="Imagen 1">
+            <img src="assets/images/seccion8-talots/talot3.webp" loading="lazy" alt="Imagen 2">
+            <img src="assets/images/seccion8-talots/talot4.webp" loading="lazy" alt="Imagen 3">
+            <img src="assets/images/seccion8-talots/talot5.webp" loading="lazy" alt="Imagen 4">
+
+            </div>
+                </div>
+
+                <!--seccion8, cercado-->
+             <div class="service-card fade-in">
+                    <i class="fas fa-solid fa-pallet service-icon" aria-hidden="true"></i>
+                    <h3>Verjas de Concreto Prefabricadas</h3>
+                    <p>Verjas de concreto prefabricadas de alta durabilidad y resistencia, ideales para delimitar terrenos, proteger propiedades y brindar mayor seguridad confiable con una instalación rápida y estética uniforme.</p>
+
+             <!-- Imagen siempre visible preview-->
+                <div class="imagen-principal">
+                <img src="assets/images/seccion7-cercado/cercado1.jpg" loading="lazy" alt="Imagen Principal">
+                <img src="assets/images/seccion7-cercado/cercadoabajo.jpg" loading="lazy" alt="Imagen Principal">
+             </div>   
+                                        <!-- boton para imagenes seccion 8 Pavimentos-->
+            <button id="btnGaleria" type="button" class="mi-boton" onclick="toggleGaleria('galeriaFotos8')">Ver más!</button>
+            <div id="galeriaFotos8" class="galeria">
+            <img src="assets/images/seccion7-cercado/cercadocompleto.jpg" loading="lazy" alt="Imagen 2">
+            <img src="assets/images/seccion7-cercado/cercado3.jpg" loading="lazy" alt="Imagen 3">
+            <img src="assets/images/seccion7-cercado/cercado5.jpg" loading="lazy" alt="Imagen 4">
+            <img src="assets/images/seccion7-cercado/cercado2.jpg" loading="lazy" alt="Imagen 5">
+
+
+            </div>
+                </div>
+
+                <!-- seccion 9, vigas y columnas para naves industriales-->
+                  <div class="service-card fade-in">
+                    <i class="fas fa-solid fa-grip-lines-vertical service-icon" aria-hidden="true"></i>
+                    <h3>Vigas y Columnas para Naves Industriales</h3>
+                    <p>Vigas y columnas de concreto prefabricadas para naves industriales, diseñadas para brindar gran resistencia estructural, 
+                        rapidez en la construcción y un acabado uniforme que garantiza durabilidad y eficiencia en cada proyecto.</p>
+                     
+                  <!-- Imagen siempre visible preview-->
+                <div class="imagen-principal">
+                <img src="assets/images/seccion9-viga/viga1.jpg" loading="lazy" alt="Imagen Principal">
+             </div>   
+                        
+                        <!-- boton para imagenes seccion 9 vigas-->
+            <button id="btnGaleria" type="button" class="mi-boton" onclick="toggleGaleria('galeriaFotos9')">Ver más!</button>
+            <div id="galeriaFotos9" class="galeria">
+            <img src="assets/images/seccion9-viga/viga2.jpg" loading="lazy" alt="Imagen 1">
+            <img src="assets/images/seccion9-viga/viga3.jpg" loading="lazy" alt="Imagen 2">
+            <img src="assets/images/seccion9-viga/viga4.jpg" loading="lazy" alt="Imagen 3">
+            <img src="assets/images/seccion9-viga/viga5.jpg" loading="lazy" alt="Imagen 4">
+            </div>
+                </div>
+
+
+            </div>
+
+
+            <!--importante aqui-->
+            <!--Segundo seccion de servicios, Pavimentos industriales-->
+ <section id="servicios" class="section services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title2">Pavimentos Industriales</h2>
+                <p class="section-subtitle2">Servicio especializado en la creación de Pavimentos industriales en concreto, diseñados para soportar altas cargas, tránsito constante y condiciones exigentes en entornos productivos. Garantizan resistencia, durabilidad y acabados de calidad para optimizar la operación de naves, almacenes y 
+                    áreas de trabajo.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <!-- Imagen siempre visible preview-->
+                <div class="imagen-principal">
+                <img src="assets/images/pavimentos/pisos1webp.webp" loading="lazy" alt="Imagen Principal">
+                <img src="assets/images/pavimentos/pisos2webp.webp" loading="lazy" alt="Imagen Principal">
+                <img src="assets/images/pavimentos/pisos3wowwebp.webp" loading="lazy" alt="Imagen Principal">
+                </div>
+                </div>
+
+             
+                <!--seccion 2, barreras jersey-->
+                <div class="service-card fade-in">
+            <!-- Imagen siempre visible preview-->
+                <div class="imagen-principal">
+                <img src="assets/images/pavimentos/pisos4wow.webp" loading="lazy" alt="Imagen Principal">
+                <img src="assets/images/pavimentos/pisos5.webp" loading="lazy" alt="Imagen Principal">
+                <img src="assets/images/pavimentos/pisos6.webp" loading="lazy" alt="Imagen Principal">
+                </div>                
+                </div>
+                    
+                    
+                
+                <!--seccion 3,registros sanitarios-->
+                <div class="service-card fade-in">
+                    <!-- Imagen siempre visible preview-->
+                <div class="imagen-principal">
+                <img src="assets/images/pavimentos/pisos7.webp" loading="lazy" alt="Imagen Principal">
+                <img src="assets/images/pavimentos/pisos8.webp" loading="lazy" alt="Imagen Principal">
+                <img src="assets/images/pavimentos/pisos9.webp" loading="lazy" alt="Imagen Principal">
+                </div>
+            </div>
+            
+            
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Autopista Circunvalación de Sto. Domingo,<br>Santo Domingo, República Dominicana</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        <span>(829) 639-8003</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        <span>holderprefabricados@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                        <span>Lun - Vie: 8:00 AM - 6:00 PM<br>Sáb: 8:00 AM - 12:00 PM</span>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Nuestros Servicios</h3>
+                    <a href="#servicios">Alcantarillas de Concreto</a>
+                    <a href="#servicios">Barreras Jersey</a>
+                    <a href="#servicios">Registros Sanitarios</a>
+                    <a href="#servicios">Registros Eléctricos</a>
+                    <a href="#servicios">Servicios Personalizados</a>
+                    <a href="#servicios">Entrega e instalación</a>
+                    <a href="#servicios">Alcantarillas Cuadradas - Talots</a>
+                    <a href="#servicios">Verjas de Concreto Prefabricadas</a>
+                    <a href="#servicios">Vigas y Columnas para Naves Industriales</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Nuestra Ubicación</h3>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1460.9021914294062!2d-70.07808982774462!3d18.549181558135082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaff5ed7b960dff%3A0xfea499b75c12e1c9!2sHOLDER%20CONCRETE%20IJP%20SRL!5e0!3m2!1sen!2sdo!4v1754915223421!5m2!1sen!2sdo"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Ubicación de Holder Concrete en Santo Domingo Oeste">
+
+                        </iframe>
+                    </div>
+                    
+                    <div class="social-icons">
+                        <a href="#" target="_blank"  aria-label="Facebook de Holder Concrete">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/holderconcrete_prefabricados?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                         target="_blank"  aria-label="Instagram de Holder Concrete">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://wa.me/18296398003" target="_blank"  aria-label="WhatsApp de Holder Concrete">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Holder Concrete Todos los derechos reservados. | Diseñado para la excelencia en prefabricados de concreto.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+function toggleGaleria(id) {
+  const galeria = document.getElementById(id);
+  galeria.classList.toggle("open");
+}
+
+
+//Funcion para hacer que el boton cambien de ver mas o cerrar imagenes
+
+/*
+const btn = document.getElementById('btnGaleria');
+const galeria = document.getElementById('galeriaFotos');
+
+btn.addEventListener('click', () => {
+  galeria.classList.toggle('open'); // alterna animación
+  galeria.classList.toggle('hidden'); // alterna visibilidad
+}); */
+
+/*funcion de lightbox*/
+ function abrirLightbox(src) {
+    document.getElementById("imagenGrande").src = src;
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+  // Función para cerrar el lightbox
+  function cerrarLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+
+  // Detectar todas las imágenes de galerías y asignar evento de clic
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".galeria img").forEach(img => {
+      img.addEventListener("click", () => {
+        abrirLightbox(img.src);
+      });
+    });
+  });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        const menuIcon = mobileMenuBtn.querySelector('i');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            
+            // Toggle hamburger/close icon
+            if (navMenu.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                navMenu.classList.remove('active');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animation classes
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header background opacity on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            const scrollY = window.scrollY;
+            
+            if (scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.96)';
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Service cards staggered animation
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // Add loading animation to page
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            const rate = scrolled * -0.5;
+            
+            if (hero && scrolled < hero.offsetHeight) {
+                hero.style.transform = `translateY(${rate}px)`;
+            }
+        });
+
+        // Console log for demonstration
+        console.log('Holder Concrete - Prefabricados de Concreto - Website loaded successfully');
+        console.log('Ofreciendo excelencia en todo lo que hacemos');
+    </script>
+</body>
+</html>
